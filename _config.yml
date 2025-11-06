@@ -3,3 +3,10 @@ description: My personal notes on stuff I study
 theme: just-the-docs
 
 url: https://ruben-tura.github.io/study-notes
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
