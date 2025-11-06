@@ -1,6 +1,6 @@
 ---
 title: Clojure
-layout: default
+nav_order: 2
 ---
 
 Home page di Clojure
