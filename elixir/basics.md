@@ -74,3 +74,11 @@ String concatenation uses the `<>` operator:
 iex> "Hello " <> name
 "Hello Sean"
 ```
+
+## Match
+
+In Elixir, the `=` operator indicates a match, and not an assignment. This means that in a code like `age = 50`, Elixir is looking to make it true, and it does so by binding the name `age` to the value `50`. Rebinding is possible.
+
+A statement like `50 = age` would still be ok for Elixir, as all it does is look for a match. A statement like `5 = age` would still theoretically be ok, but Elixir looks at the value of `age`, and being that 50 and 5 are not equal, it returns a Match Error. 
+
+For Elixir to be able to make a binding, the name to bind must be in the left hand side of the match operator `=`.
