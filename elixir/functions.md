@@ -99,3 +99,34 @@ Some things to note:
 - The base case happens when Elixir matches the exponent to 0.
 - The `_` tells Elixir that the `base` parameter will not be used in the defined function. It still needs to appear for the matching.
 
+We can also use 'guards', meaning executing a function only when certain conditions are met. This is done via the `when` keyword:
+
+```elixir
+def power(_base, exponent) when exponent == 0 do
+  1
+end
+```
+
+Let's add a prime checking function to see a different example:
+
+```elixir
+def is_prime?(potential_prime) when potential_prime <= 1 do
+  false
+end
+
+def is_prime?(potential_prime) do
+  prime_check(potential_prime, 2)
+end
+
+defp prime_check(potential_prime, current_val) when current_val === potential_prime do
+  true
+end
+
+defp prime_check(potential_prime, current_val) when rem(potential_prime, current_val) === 0 do
+  false
+end
+
+defp prime_check(potential_prime, current_val) do
+  prime_check(potential_prime, current_val + 1)
+end
+```
