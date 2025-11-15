@@ -130,3 +130,5 @@ defp prime_check(potential_prime, current_val) do
   prime_check(potential_prime, current_val + 1)
 end
 ```
+
+
