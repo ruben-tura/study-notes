@@ -72,3 +72,30 @@ end
 ```
 In this case, if we pass "John" as first name, the first function will be executed.
 Matching is checked from top to bottom, or rather, from the first declaration to the last. The first matching is the one that will be executed.
+
+## Recursion
+
+Let's try and solve a simple problem with recursion: writing a function that given a base and an exponent, calculates the power.
+
+```elixir
+defmodule SimpleMath do
+  def power(base, exponent) do
+    power_helper(base, exponent, 1)
+  end
+
+  defp power_helper(_base, 0, product_so_far) do
+    product_so_far
+  end
+
+  defp power_helper(base, exponent, product_so_far) do
+    power_helper(base, exponent - 1, (base * product_so_far))
+  end
+end
+```
+
+Some things to note:
+- The function `power` calls a helper function.
+- There is a standard helper function calling itself.
+- The base case happens when Elixir matches the exponent to 0.
+- The `_` tells Elixir that the `base` parameter will not be used in the defined function. It still needs to appear for the matching.
+
