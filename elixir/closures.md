@@ -1,4 +1,3 @@
-
 ---
 title: Closures
 parent: Elixir
